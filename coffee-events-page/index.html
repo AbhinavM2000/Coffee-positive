@@ -1,0 +1,481 @@
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<style>
+
+.ico{
+    width:100px;
+    display:block;
+    height:20px;
+    background:none;
+    color:white;
+    text-decoration:none;
+    padding-left:20px;
+}
+.ico:before{
+    content: '';
+    background:url('https://i.ibb.co/1qLzxPz/download.jpg');
+    background-size:cover;
+        position:absolute;
+        border-radius:50%;
+    width:80px;
+    height:80px;
+    margin-left:-90px;
+    margin-top:-35px;
+}
+
+   @import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300);
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #271300;
+  overflow: hidden;
+  font-family: "Roboto Condensed", sans-serif;
+}
+body .left {
+  float: left;
+  width: 50%;
+  height: 100vh;
+  position: Relative;
+}
+body .left_inner {
+  width: 340px;
+  margin: 0 auto;co
+  transform: translateY(-50%);
+  height: 414px;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+}
+body .left_inner h1 {
+  color: white;
+  font-size: 28px;
+  margin: 120px 0px 0px 0px;
+}
+body .left_inner h2 {
+  color: #abe8d2;
+  font-size: 22px;
+  font-weight: 200;
+  margin: 0px 0px 0px 0px;
+}
+body .right {
+  float: center;
+  position: relative;
+  width: 50%;
+  height: 100vh;
+}
+
+.app {
+  border-radius: 10px;
+  width: 340px;
+  margin: 0 auto;
+  height: 414px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  box-shadow: 4px 5px 0px rgba(0, 0, 0, 0.11);
+  -webkit-animation: intro 0.34s 0.4s cubic-bezier(1, 1.4, 0.41, 1.01) forwards;
+          animation: intro 0.34s 0.4s cubic-bezier(1, 1.4, 0.41, 1.01) forwards;
+  transform: translateY(-50%) scale(0) rotateX(10deg) rotateY(10deg) rotateZ(10deg);
+  margin: auto;
+  overflow: hidden;
+  font-family: "Roboto Condensed", sans-serif;
+}
+.app_inner {
+  position: relative;
+}
+.app_inner input[type=radio] {
+  display: none;
+}
+.app_inner input[type=radio]:checked + label .app_inner__tab {
+  height: 175px;
+}
+.app_inner input[type=radio]:checked + label .app_inner__tab .tab_right {
+  top: 39px;
+  transition: all 0.3s 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+.app_inner input[type=radio]:not(checked) + label .app_inner__tab {
+  height: 80px;
+  border-left: 12px solid rgba(0, 0, 0, 0.12);
+}
+.app_inner input[type=radio]:not(checked) + label .app_inner__tab .tab_right {
+  top: 200px;
+  transition: all 0.3s 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+.app_inner input[type=radio]:checked + label .app_inner__tab .tab_left .tab_left__image {
+  -webkit-animation: move_in 0.55s 0.05s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
+          animation: move_in 0.55s 0.05s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
+  transition: all 0.3s 0.36s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+.app_inner input[type=radio]:not(checked) + label .app_inner__tab .tab_left .tab_left__image {
+  -webkit-animation: move_out 0.75s 0s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
+          animation: move_out 0.75s 0s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
+  transition: all 0.3s 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+.app_inner input[type=radio]:checked + label .app_inner__tab .tab_left .big {
+  left: 260px;
+}
+.app_inner input[type=radio]:not(checked) + label .app_inner__tab .tab_left .big {
+  left: 400px;
+}
+.app_inner input[type=radio]:checked + label .app_inner__tab h2 i {
+  opacity: 0;
+}
+.app_inner input[type=radio]:not(checked) + label .app_inner__tab h2 i {
+  opacity: 0.3;
+}
+.app_inner label {
+  display: block;
+  width: 100%;
+}
+.app_inner label:nth-of-type(1) .app_inner__tab {
+  background: #9c6f44;
+  height: 200px;
+}
+.app_inner label:nth-of-type(1) .app_inner__tab:hover {
+  transition: all 0.2s;
+  background: #9c6f44;
+}
+.app_inner label:nth-of-type(1) .app_inner__tab .tab_left__image {
+  background: none;
+}
+.app_inner label:nth-of-type(2) .app_inner__tab {
+  background: #9c6f44;
+}
+.app_inner label:nth-of-type(2) .app_inner__tab:hover {
+  transition: all 0.2s;
+  background: #9c6f44;
+}
+.app_inner label:nth-of-type(2) .app_inner__tab .tab_left__image {
+  background: none;
+}
+.app_inner label:nth-of-type(3) .app_inner__tab {
+  background: #9c6f44;
+}
+.app_inner label:nth-of-type(3) .app_inner__tab:hover {
+  transition: all 0.2s;
+  background: #9c6f44;
+}
+.app_inner label:nth-of-type(3) .app_inner__tab .tab_left__image {
+  background: none;
+}
+.app_inner label:nth-of-type(4) .app_inner__tab {
+  background: #9c6f44;
+}
+.app_inner label:nth-of-type(4) .app_inner__tab:hover {
+  transition: all 0.2s;
+  background: #9c6f44;
+}
+.app_inner label:nth-of-type(4) .app_inner__tab .tab_left__image {
+  background: none;
+}
+.app_inner__tab {
+  width: 100%;
+  height: 80px;
+  background: red;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.65s cubic-bezier(1, 0, 0.41, 1.01);
+}
+.app_inner__tab h2 {
+  position: absolute;
+  right: 20px;
+  top: 16px;
+  color: #1a1c1d;
+  font-size: 18px;
+}
+.app_inner__tab h2 i {
+  position: absolute;
+  right: 271px;
+  opacity: 0.3;
+  transition: all 0.3s;
+}
+.app_inner__tab .tab_right {
+  width: 60%;
+  float: right;
+  position: relative;
+  top: 200px;
+  text-align: right;
+  padding: 20px;
+}
+.app_inner__tab .tab_right h3, .app_inner__tab .tab_right h4, .app_inner__tab .tab_right p {
+  margin: 0;
+}
+.app_inner__tab .tab_right h3 {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.65);
+}
+.app_inner__tab .tab_right h4 {
+  font-size: 12px;
+  margin: 4px 0px;
+  color: rgba(0, 0, 0, 0.33);
+}
+.app_inner__tab .tab_right p {
+  font-size: 11px;
+  color: white;
+}
+.app_inner__tab .tab_right button {
+  margin-top: 10px;
+  border: 2px, color:white;
+  background: #65B0D5;
+  border-radius: 5px;
+  padding: 6px 20px;
+  cursor: pointer;
+  font-family: "Roboto Condensed", sans-serif;
+  outline: #65B0D5;
+  font-size: 11px;
+  color: white;
+  transition: all 0.3s;
+  
+}
+.app_inner__tab .tab_right button:hover {
+  background: white;
+  color:#65B0D5;
+
+}
+.app_inner__tab .tab_left {
+  width: 30%;
+  float: left;
+  position: relative;
+}
+.app_inner__tab .tab_left .big {
+  position: absolute;
+  top: -17px;
+  transition: all 0.3s 0.3s;
+  left: 390px;
+  font-size: 180px;
+  opacity: 0.08;
+}
+.app_inner__tab .tab_left__image {
+  position: relative;
+  top: -100px;
+  text-align: center;
+  background: white;
+  left: 47px;
+  border-radius: 70px;
+  width: 80px;
+  height: 80px;
+}
+.app_inner__tab .tab_left__image i {
+  color: white;
+  font-size: 40px;
+  top: 18px;
+  position: relative;
+}
+
+@-webkit-keyframes move_out {
+  0% {
+    top: 47px;
+  }
+  100% {
+    top: 200px;
+  }
+}
+
+@keyframes move_out {
+  0% {
+    top: 47px;
+  }
+  100% {
+    top: 200px;
+  }
+}
+@-webkit-keyframes move_in {
+  0% {
+    top: -200px;
+  }
+  100% {
+    top: 47px;
+  }
+}
+@keyframes move_in {
+  0% {
+    top: -200px;
+  }
+  100% {
+    top: 47px;
+  }
+}
+@-webkit-keyframes bump {
+  0% {
+    top: 16px;
+  }
+  25% {
+    top: 13px;
+  }
+  50% {
+    top: 16px;
+  }
+  75% {
+    top: 13px;
+  }
+  100% {
+    top: 16px;
+  }
+}
+@keyframes bump {
+  0% {
+    top: 16px;
+  }
+  25% {
+    top: 13px;
+  }
+  50% {
+    top: 16px;
+  }
+  75% {
+    top: 13px;
+  }
+  100% {
+    top: 16px;
+  }
+}
+@-webkit-keyframes intro {
+  0% {
+    transform: translateY(-50%) scale(0) rotateX(10deg) rotateY(10deg) rotateZ(40deg);
+  }
+  100% {
+    transform: translateY(-50%) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+}
+@keyframes intro {
+  0% {
+    transform: translateY(-50%) scale(0) rotateX(10deg) rotateY(10deg) rotateZ(40deg);
+  }
+  100% {
+    transform: translateY(-50%) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+}
+a.download, a.follow {
+  text-align: center;
+  margin-top: 13px;
+  width: 300px;
+  float: left;
+  display: inline-block;
+  padding: 16px 30px;
+  background: none;
+  color: white;
+  font-weight: 900;
+  font-family: "Roboto Condensed", sans-serif;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-right: 12px;
+}
+a.download i, a.follow i {
+  margin-right: 10px;
+}
+
+a.follow {
+  float: left;
+  padding: 14px 30px;
+  background: none;
+  color: white;
+  border: 2px solid white;
+}
+a.follow:hover {
+  color: #724e2c;
+  border-color: #41EFB6;
+} 
+    
+    
+    
+</style>
+
+
+
+
+<div class='right'>
+  <div class='app'>
+    <div class='app_inner'>
+      <input false='' id='tab-1' name='buttons' type='radio'>
+      <label for='tab-1'>
+        <div class='app_inner__tab'>
+          <h2>
+            <i class='ico'></i>
+            Preliminary Ideation
+          </h2>
+          <div class='tab_left'>
+            <i class='big icon ion-android-color-palette'></i>
+            <div class='tab_left__image'>
+              <i class='ico'></i>
+            </div>
+          </div>
+          <div class='tab_right'>
+            <h3 style="color:#8BE78B;"> COMPLETE</h3>
+            <h4>PROJECT-Y</h4>
+            <p>19-05-2021</p>
+            <button onclick="location.href = 'https://t.me/joinchat/w7e-v8ga-T40MzU1';"> PROJECT-Y </button>
+          </div>
+        </div>
+      </label>
+      <input false='' id='tab-2' name='buttons' type='radio'>
+      <label for='tab-2'>
+        <div class='app_inner__tab'>
+          <h2>
+            <i class='icon ion-android-alarm-clock'></i>
+            Building the Team
+          </h2>
+          <div class='tab_left'>
+            <i class='big icon ion-music-note'></i>
+            <div class='tab_left__image'>
+              <i class='ico'></i>
+            </div>
+          </div>
+          <div class='tab_right'>
+            <h3 style="color:#8BE78B;"> COMPLETE</h3>
+            <h4>Members Intimated</h4>
+            <p>20-05-2021</p>
+            <button onclick="location.href = 'https://t.me/joinchat/w7e-v8ga-T40MzU1';"> PROJECT-Y </button>
+          </div>
+        </div>
+      </label>
+      <input false='' id='tab-3' name='buttons' type='radio'>
+      <label for='tab-3'>
+        <div class='app_inner__tab'>
+          <h2>
+            <i class='icon ion-android-alarm-clock'></i>
+            MEETING #M001
+          </h2>
+          <div class='tab_left'>
+            <i class='big icon ion-android-microphone'></i>
+            <div class='tab_left__image'>
+              <i class='ico'></i>
+            </div>
+          </div>
+          <div class='tab_right'>
+            <h3 style="color:#8BE78B;"> COMPLETE</h3>
+            <h4>GMEET/DISCORD</h4>
+            <p>22-05-2021</p>
+           <button onclick="location.href = 'https://t.me/joinchat/w7e-v8ga-T40MzU1';"> PROJECT-Y </button>
+          </div>
+        </div>
+      </label>
+      <input checked='' id='tab-4' name='buttons' type='radio'>
+      <label for='tab-4'>
+        <div class='app_inner__tab'>
+          <h2>
+            <i class='icon ion-android-alarm-clock'></i>
+            DESIGN REVIEW #M002
+          </h2>
+          <div class='tab_left'>
+            <i class='big icon ion-android-bar'></i>
+            <div class='tab_left__image'>
+              <i class='ico'></i>
+            </div>
+          </div>
+          <div class='tab_right'>
+            <h3 style="color:#F0CD46;"> SCHEDULED</h3>
+            <h4>GMEET</h4>
+            <p>29-05-2021</p>
+            <button onclick="location.href = 'https://t.me/joinchat/w7e-v8ga-T40MzU1';"> PROJECT-Y </button>
+          </div>
+        </div>
+      </label>
+    </div>
+  </div>
+</div>
