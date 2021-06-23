@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>Calender
+
+    <style>
+        .back{
+            background-color: yellow;
+			list-style-type: none;
+			margin: 1%;
+			padding: 1%;
+        }
+        
+        .back li{
+            display:inline-block;
+        }
+        .circleF{
+            width: 30px;
+			height: 30px;
+			background: blue;
+            /*padding: 5px 5px;*/
+            border: solid 2px;
+            border-radius: 50%;
+        }
+        .circleE{
+            width: 30px;
+			height: 30px;
+			background: yellow;
+            /*padding: 5px 5px;*/
+            border: solid 2px;
+            border-radius: 50%;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <p id="hello"></p>
+    <div id="background" class="back"></div>
+    
+    <script>
+        function fillNext(){
+            //console.log(this.id);
+            if(this.id == "week#" + (person_age+1).toString()){
+                this.setAttribute('class', 'circleF');
+                person_age++;
+            }
+        }
+        
+        
+        person_name = "Abhinav";
+        person_age = 1400; // in weeks.
+        max_weeks = 4000;
+        
+        helloMessage = "hello " + person_name + ". You are " + person_age.toString() + " weeks old. Here is your calender."
+        document.getElementById("hello").innerHTML =  helloMessage; 
+        
+        var ul = document.createElement('ul');
+        document.getElementById("background").appendChild(ul);
+        
+        var i = 0;
+        idArr = new Array(max_weeks);
+        
+        for(i=0; i<person_age; i++){
+            idArr[i] = 'week#' + (i+1).toString();
+            var li = document.createElement('li');
+            ul.appendChild(li);
+            li.innerHTML += ('<div id=' + idArr[i] + ' class="circleF"></div>');
+        }
+        
+        for(;i<max_weeks; i++){
+            idArr[i] = 'week#' + (i+1).toString();
+            var li = document.createElement('li');
+            ul.appendChild(li);
+            li.innerHTML += ('<div id=' + idArr[i] + ' class="circleE"></div>');
+            week = document.getElementById(idArr[i]);
+            week.addEventListener('click', fillNext);
+        }
+    </script>
+</body>
+</html>
