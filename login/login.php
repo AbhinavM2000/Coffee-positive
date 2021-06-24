@@ -6,6 +6,8 @@ $username = $_GET['login'];
 $password = $_GET['pass'];
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+    $_SESSION['username'] =$username;
+    $_SESSION['password'] =$password;
     header("location: welcome.php");
     exit;
 }
@@ -66,7 +68,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["username"] = $username;                            
                             
                             // Redirect user to welcome page
-                            header("location: welcome.php?name=$username");
+                            header("location: welcome.php");
                         } else{
                             // Password is not valid, display a generic error message
                             $login_err = "Invalid username or password.";
@@ -121,10 +123,11 @@ var password=<?php echo $password;?>
              
             </div>
             <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Login">
+                <input type="submit"  class="btn btn-primary" style="display: none;" value="Login">
             </div>
      
         </form>
+        
     </div>
 </body>
 <script>
